@@ -817,77 +817,95 @@ void LitColumnsApp::BuildFrameResources()
 
 void LitColumnsApp::BuildMaterials()
 {
+	UINT Num_Mat = 0;
+
 	auto bricks0 = std::make_unique<Material>();
 	bricks0->Name = "bricks0";
-	bricks0->MatCBIndex = 0;
-	bricks0->DiffuseSrvHeapIndex = 0;
+	bricks0->MatCBIndex = Num_Mat;
+	bricks0->DiffuseSrvHeapIndex = Num_Mat++;
 	bricks0->DiffuseAlbedo = XMFLOAT4(Colors::ForestGreen);
 	bricks0->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
 	bricks0->Roughness = 0.1f;
 
 	auto stone0 = std::make_unique<Material>();
 	stone0->Name = "stone0";
-	stone0->MatCBIndex = 1;
-	stone0->DiffuseSrvHeapIndex = 1;
+	stone0->MatCBIndex = Num_Mat;
+	stone0->DiffuseSrvHeapIndex = Num_Mat++;
 	stone0->DiffuseAlbedo = XMFLOAT4(Colors::LightSteelBlue);
 	stone0->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	stone0->Roughness = 0.3f;
 
 	auto Base = std::make_unique<Material>();
 	Base->Name = "base";
-	Base->MatCBIndex = 2;
-	Base->DiffuseSrvHeapIndex = 2;
+	Base->MatCBIndex = Num_Mat;
+	Base->DiffuseSrvHeapIndex = Num_Mat++;
 	Base->DiffuseAlbedo = XMFLOAT4(Colors::Gray);
 	Base->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	Base->Roughness = 0.3f;
  
 	auto blueDiamond = std::make_unique<Material>();
 	blueDiamond->Name = "blueDiamond";
-	blueDiamond->MatCBIndex = 3;
-	blueDiamond->DiffuseSrvHeapIndex = 3;
+	blueDiamond->MatCBIndex = Num_Mat;
+	blueDiamond->DiffuseSrvHeapIndex = Num_Mat++;
 	blueDiamond->DiffuseAlbedo = XMFLOAT4(Colors::SteelBlue);
 	blueDiamond->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	blueDiamond->Roughness = 0.1f;
 
 	auto redDiamond = std::make_unique<Material>();
 	redDiamond->Name = "redDiamond";
-	redDiamond->MatCBIndex = 4;
-	redDiamond->DiffuseSrvHeapIndex = 4;
+	redDiamond->MatCBIndex = Num_Mat;
+	redDiamond->DiffuseSrvHeapIndex = Num_Mat++;
 	redDiamond->DiffuseAlbedo = XMFLOAT4(Colors::Pink);
 	redDiamond->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	redDiamond->Roughness = 0.3f;
 
 	auto tile0 = std::make_unique<Material>();
 	tile0->Name = "tile0";
-	tile0->MatCBIndex = 5;
-	tile0->DiffuseSrvHeapIndex = 5;
+	tile0->MatCBIndex = Num_Mat;
+	tile0->DiffuseSrvHeapIndex = Num_Mat++;
 	tile0->DiffuseAlbedo = XMFLOAT4(Colors::LightGray);
 	tile0->FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
 	tile0->Roughness = 0.2f;
 
 	auto skullMat = std::make_unique<Material>();
 	skullMat->Name = "skullMat";
-	skullMat->MatCBIndex = 6;
-	skullMat->DiffuseSrvHeapIndex = 6;
+	skullMat->MatCBIndex = Num_Mat;
+	skullMat->DiffuseSrvHeapIndex = Num_Mat++;
 	skullMat->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	skullMat->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05);
 	skullMat->Roughness = 0.3f;
 	
 	auto wedge = std::make_unique<Material>();
 	wedge->Name = "wedge";
-	wedge->MatCBIndex = 7;
-	wedge->DiffuseSrvHeapIndex = 7;
+	wedge->MatCBIndex = Num_Mat;
+	wedge->DiffuseSrvHeapIndex = Num_Mat++;
 	wedge->DiffuseAlbedo = XMFLOAT4(Colors::Blue);
 	wedge->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	wedge->Roughness = 0.3f;
 
 	auto battlement = std::make_unique<Material>();
 	battlement->Name = "battlement";
-	battlement->MatCBIndex = 8;
-	battlement->DiffuseSrvHeapIndex = 8;
+	battlement->MatCBIndex = Num_Mat;
+	battlement->DiffuseSrvHeapIndex = Num_Mat++;
 	battlement->DiffuseAlbedo = XMFLOAT4(Colors::Crimson);
 	battlement->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
 	battlement->Roughness = 0.3f;
+
+	auto pyramid = std::make_unique<Material>();
+	pyramid->Name = "pyramid";
+	pyramid->MatCBIndex = Num_Mat;
+	pyramid->DiffuseSrvHeapIndex = Num_Mat++;
+	pyramid->DiffuseAlbedo = XMFLOAT4(Colors::Gold);
+	pyramid->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	pyramid->Roughness = 0.3f;
+
+	auto parrellegram = std::make_unique<Material>();
+	parrellegram->Name = "parrellegram";
+	parrellegram->MatCBIndex = Num_Mat;
+	parrellegram->DiffuseSrvHeapIndex = Num_Mat++;
+	parrellegram->DiffuseAlbedo = XMFLOAT4(Colors::Green);
+	parrellegram->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	parrellegram->Roughness = 0.3f;
 
 	mMaterials["bricks0"] = std::move(bricks0);
 	mMaterials["stone0"] = std::move(stone0);
@@ -898,6 +916,8 @@ void LitColumnsApp::BuildMaterials()
 	mMaterials["redDiamond"] = std::move(redDiamond);
 	mMaterials["wedge"] = std::move(wedge);
 	mMaterials["battlement"] = std::move(battlement);
+	mMaterials["pyramid"] = std::move(pyramid);
+	mMaterials["parrellegram"] = std::move(parrellegram);
 }
 
 void LitColumnsApp::BuildRenderItems()
@@ -971,13 +991,13 @@ void LitColumnsApp::BuildRenderItems()
 	{
 		auto leftPyrRitem = std::make_unique<RenderItem>();
 		auto rightPyrRitem = std::make_unique<RenderItem>();
-		XMMATRIX rightPyrWorld = XMMatrixTranslation(-5.5f, 5.0f, 3.5f -(i * 3.5));
-		XMMATRIX leftPyrWorld = XMMatrixTranslation(5.5f, 5.0f, 3.5f -(i * 3.5));
+		XMMATRIX rightPyrWorld = XMMatrixTranslation(-5.5f, 5.0f, 3.52f -(i * 3.5));
+		XMMATRIX leftPyrWorld = XMMatrixTranslation(5.5f, 5.0f, 3.52f -(i * 3.5));
 
 
 		XMStoreFloat4x4(&leftPyrRitem->World, pyramidTransform*XMMatrixRotationX(XMConvertToRadians(0))* rightPyrWorld);
 		leftPyrRitem->ObjCBIndex = Num_Object++;
-		leftPyrRitem->Mat = mMaterials["blueDiamond"].get();
+		leftPyrRitem->Mat = mMaterials["pyramid"].get();
 		leftPyrRitem->Geo = mGeometries["shapeGeo"].get();
 		leftPyrRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 		leftPyrRitem->IndexCount = leftPyrRitem->Geo->DrawArgs["pyramid"].IndexCount;
@@ -986,7 +1006,7 @@ void LitColumnsApp::BuildRenderItems()
 
 		XMStoreFloat4x4(&rightPyrRitem->World, pyramidTransform*XMMatrixRotationX(XMConvertToRadians(0))* leftPyrWorld);
 		rightPyrRitem->ObjCBIndex = Num_Object++;
-		rightPyrRitem->Mat = mMaterials["blueDiamond"].get();
+		rightPyrRitem->Mat = mMaterials["pyramid"].get();
 		rightPyrRitem->Geo = mGeometries["shapeGeo"].get();
 		rightPyrRitem->PrimitiveType = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 		rightPyrRitem->IndexCount = rightPyrRitem->Geo->DrawArgs["pyramid"].IndexCount;
@@ -1002,7 +1022,7 @@ void LitColumnsApp::BuildRenderItems()
 	for (int i = 0; i < 2; ++i)
 	{
 		auto BatRitem = std::make_unique<RenderItem>();
-		XMMATRIX BatWorld = XMMatrixTranslation(-7.5f, 5.0f, 5.5f - (i * 13));
+		XMMATRIX BatWorld = XMMatrixTranslation(-7.5f, 5.0f, 5.54f - (i * 13));
 
 		XMStoreFloat4x4(&BatRitem->World, battlementTransform*XMMatrixRotationX(XMConvertToRadians(0))* BatWorld);
 		BatRitem->ObjCBIndex = Num_Object++;
@@ -1038,16 +1058,27 @@ void LitColumnsApp::BuildRenderItems()
 	tetraRitem->BaseVertexLocation = tetraRitem->Geo->DrawArgs["tetrahedron"].BaseVertexLocation;
 	mAllRitems.push_back(std::move(tetraRitem));
 
-	auto parrellegramRitem = std::make_unique<RenderItem>();
-	XMStoreFloat4x4(&parrellegramRitem->World, XMMatrixScaling(1.0f, 1.0f, 1.0f)*XMMatrixRotationY(XMConvertToRadians(90))*XMMatrixTranslation(-4.6f, 2.5f, -5.4f));
-	parrellegramRitem->ObjCBIndex = Num_Object++;
-	parrellegramRitem->Mat = mMaterials["blueDiamond"].get();
-	parrellegramRitem->Geo = mGeometries["shapeGeo"].get();
-	parrellegramRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
-	parrellegramRitem->IndexCount = parrellegramRitem->Geo->DrawArgs["parrellegram"].IndexCount;
-	parrellegramRitem->StartIndexLocation = parrellegramRitem->Geo->DrawArgs["parrellegram"].StartIndexLocation;
-	parrellegramRitem->BaseVertexLocation = parrellegramRitem->Geo->DrawArgs["parrellegram"].BaseVertexLocation;
-	mAllRitems.push_back(std::move(parrellegramRitem));
+	auto R_parrellegramRitem = std::make_unique<RenderItem>();
+	XMStoreFloat4x4(&R_parrellegramRitem->World, XMMatrixScaling(1.2f, .4f, 1.0f)*XMMatrixRotationZ(XMConvertToRadians(60))*XMMatrixTranslation(-3.0f, 0.5f, -8.4f));
+	R_parrellegramRitem->ObjCBIndex = Num_Object++;
+	R_parrellegramRitem->Mat = mMaterials["parrellegram"].get();
+	R_parrellegramRitem->Geo = mGeometries["shapeGeo"].get();
+	R_parrellegramRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	R_parrellegramRitem->IndexCount = R_parrellegramRitem->Geo->DrawArgs["parrellegram"].IndexCount;
+	R_parrellegramRitem->StartIndexLocation = R_parrellegramRitem->Geo->DrawArgs["parrellegram"].StartIndexLocation;
+	R_parrellegramRitem->BaseVertexLocation = R_parrellegramRitem->Geo->DrawArgs["parrellegram"].BaseVertexLocation;
+	mAllRitems.push_back(std::move(R_parrellegramRitem));
+
+	auto L_parrellegramRitem = std::make_unique<RenderItem>();
+	XMStoreFloat4x4(&L_parrellegramRitem->World, XMMatrixScaling(1.2f, .4f, 1.0f)*XMMatrixRotationZ(XMConvertToRadians(60))*XMMatrixRotationY(XMConvertToRadians(180))*XMMatrixTranslation(2.0f, 0.5f, -7.4f));
+	L_parrellegramRitem->ObjCBIndex = Num_Object++;
+	L_parrellegramRitem->Mat = mMaterials["parrellegram"].get();
+	L_parrellegramRitem->Geo = mGeometries["shapeGeo"].get();
+	L_parrellegramRitem->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+	L_parrellegramRitem->IndexCount = L_parrellegramRitem->Geo->DrawArgs["parrellegram"].IndexCount;
+	L_parrellegramRitem->StartIndexLocation = L_parrellegramRitem->Geo->DrawArgs["parrellegram"].StartIndexLocation;
+	L_parrellegramRitem->BaseVertexLocation = L_parrellegramRitem->Geo->DrawArgs["parrellegram"].BaseVertexLocation;
+	mAllRitems.push_back(std::move(L_parrellegramRitem));
 
 	XMMATRIX brickTexTransform = XMMatrixScaling(1.0f, 1.0f, 1.0f);
 	for(int i = 0; i < 5; ++i)
